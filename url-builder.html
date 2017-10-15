@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>URL builder</title>
+	<meta charset="utf-8">
+	<style>
+		.output{
+			width: 500px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>SAE url builder</h1>
+	</header>
+	<section >
+		<h2>ION LP url</h2>
+		<form>
+			<label for="url">URL</label><br>
+			<input type="text" id="url" name="utm-url"><br><br>
+
+			<label for="campaign">Email Name</label><br>
+			<input type="text" id="campaign" name="utm-url"><br><br>
+
+			<label for="campaign-type">Campaign type (i.e. Drip-Campaign)</label><br>
+			<input type="text" id="campaign-type" name="utm-url"><br><br>
+
+			<input type="submit" id="submit-utm-url" name="utm-url"><br>
+		</form>
+	</section><br><br>
+	<section id="output-1" class="output"></section><br><br><br>
+
+	<section>
+			<h2>Internal url</h2>
+		<form>
+			<label for="sae-url">SAE Url</label><br>
+			<input type="text" id="sae-url" name="internal-url"><br><br>
+
+			<label for="email-campaign">Email Name</label><br>
+			<input type="text" id="email-campaign" name="internal-url"><br><br>
+
+			<label for="promocode">Promo Code</label><br>
+			<input type="text" id="promocode" name="internal-url"><br><br>
+
+			<input type="submit" id="submit-internal-url" name="internal-url"><br>
+		</form>
+	</section><br><br>
+	<section id="output-2" class="output"></section><br><br><br><br>
+<!-- 	<section class="reset-btn">
+		<button id="reset">Reset All</button>
+	</section> -->
+	
+
+<script 
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+		$("#submit-utm-url").on("click", function(){
+			event.preventDefault();
+
+			//ion url fields
+			var saeUrl= $("#url").val().trim();
+			var saeCampaign= $("#campaign").val().trim();
+			var saeType= $("#campaign-type").val().trim();
+
+	
+			$("#output-1").text(
+				saeUrl + "?utm_source=" + 
+				saeType + "&utm_medium=Email&utm_campaign=" + 
+				saeCampaign
+				);
+
+
+			
+		});
+
+		$("#submit-internal-url").on("click", function(){
+			event.preventDefault();
+
+			//internal url fields
+			var internalUrl= $("#sae-url").val().trim();
+			var internalCampaign= $("#email-campaign").val().trim();
+			var promoCode= $("#promocode").val().trim();
+
+
+			$("#output-2").text(
+				internalUrl + "?WT.mc_id=Email-MKTO-" + 
+				internalCampaign + "&WT.i_dcsvid={{lead.Email Address}}&PC=" + 
+				promoCode + "&PCN={{lead.Customer Number}}"
+				);
+			
+			
+		});
+
+		// $("#reset").on("click", function(){
+		// 	event.preventDefault();
+		// 	console.log("bears");
+
+		// 	// $("#url").empty();
+		// 	// $("#campaign").empty();
+		// 	// $("#campaign-type").empty();
+		// 	// $("#output-1").empty();
+		// 	// $("#sae-url").empty();
+		// 	// $("#email-campaign").empty();
+		// 	// $("#promocode").empty();
+		// 	// $("#output-2").empty();
+
+		// }
+
+	
+</script>
+</body>
+</html>
