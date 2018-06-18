@@ -7,6 +7,10 @@
 		.output{
 			width: 750px;
 		}
+		.resource-item {
+			display: inline-block;
+			margin-right: 100px;
+		}
 	</style>
 </head>
 <body>
@@ -14,7 +18,7 @@
 		<h1>Level.Agency client url builder</h1>
 	</header>
 	<section >
-		<h2>ION LP url</h2>
+		<h2>ION URL</h2>
 		<form>
 			<label for="url">ION URL</label><br>
 			<input type="text" id="url" name="utm-url"><br><br>
@@ -28,10 +32,10 @@
 			<input type="submit" id="submit-utm-url" name="utm-url"><br>
 		</form>
 	</section><br><br>
-	<section id="output-1" class="output"></section><br><br><br>
+	<section id="output-1" class="output"></section><br><br>
 
 	<section>
-			<h2>Internal url</h2>
+			<h2>Internal (SAE) url</h2>
 		<form>
 			<label for="sae-url">Internal Url</label><br>
 			<input type="text" id="sae-url" name="internal-url"><br><br>
@@ -45,10 +49,21 @@
 			<input type="submit" id="submit-internal-url" name="internal-url"><br>
 		</form>
 	</section><br><br>
-	<section id="output-2" class="output"></section><br><br><br><br>
-<!-- 	<section class="reset-btn">
-		<button id="reset">Reset All</button>
-	</section> -->
+	
+	<section>
+		<h2>Resources</h2>
+		<div class="resource-item">
+			<p><strong>Primary Blue</strong></p>
+			<p> #01A0E9</p><br><br>
+		</div>
+		<div class="resource-item">
+			<p><strong>Remove Section Shortcut</strong></p>
+			<textarea readonly style="width: 400px; height: 60px; text-align: left;"> 
+				<div style="display: none;"></div>
+			</textarea>
+		</div>
+	
+	</section>
 	
 
 <script 
